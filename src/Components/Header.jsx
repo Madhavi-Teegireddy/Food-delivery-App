@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 
 import { motion } from "framer-motion";
 import { MdShoppingBasket, MdAdd, MdLogout } from "react-icons/md";
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { app } from "../firebase.config";
 
 
 
@@ -11,6 +13,15 @@ import Avatar from "../img/avatar1.png";
 
 
 const Header = () => {
+
+    const firebaseAuth = getAuth(app);
+    const provider = new GoogleAuthProvider();
+
+    const login = async () => {
+        const response = await signInWithPopup(firebaseAuth, provider)
+        console.log(response);
+    }
+
   return (
     <header
     className='fixed z-50 w-screen
@@ -18,7 +29,7 @@ const Header = () => {
 
       <div className="hidden md:flex w-full h-full items-center justify-between">
         <Link to={"/"} className="flex items-center gap-2">
-          <img src={Logo} className="w-8 object-cover" alt="logo" />
+          <motion.img src={Logo} whileTap={{ scale: 0.6 }} className="w-8 object-cover" alt="logo" />
           <p className="text-headingColor text-xl font-bold"> City</p>
         </Link>
 
@@ -57,14 +68,16 @@ const Header = () => {
               </div>
             </div>
 
-            <img
-              whileTap={{ scale: 0.6 }}
-              src={Avatar}
+            <div className="relative">
+                <motion.img
+                 whileTap={{ scale: 0.6 }}
+                 src={Avatar}
             //   src={user ? user.photoURL : Avatar}
-              className="w-10 min-w-[40px] h-10 min-h-[40px] drop-shadow-xl cursor-pointer rounded-full"
-              alt="userprofile"
-            //   onClick={login}
+                 className="w-10 min-w-[40px] h-10 min-h-[40px] drop-shadow-xl cursor-pointer rounded-full"
+                 alt="userprofile"
+              onClick={login}
             />
+            </div>
 
 
             </div>
