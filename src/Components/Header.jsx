@@ -7,6 +7,8 @@ import { MdShoppingBasket, MdAdd, MdLogout } from "react-icons/md";
 
 
 import Logo from "../img/logo.png";
+import Avatar from "../img/avatar1.png";
+
 
 const Header = () => {
   return (
@@ -54,6 +56,15 @@ const Header = () => {
                 </p>
               </div>
             </div>
+
+            <img
+              whileTap={{ scale: 0.6 }}
+              src={Avatar}
+            //   src={user ? user.photoURL : Avatar}
+              className="w-10 min-w-[40px] h-10 min-h-[40px] drop-shadow-xl cursor-pointer rounded-full"
+              alt="userprofile"
+            //   onClick={login}
+            />
 
 
             </div>
