@@ -2,11 +2,14 @@ import logo from './logo.svg';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 
-import {Header} from "./Components";
+import { AnimatePresence } from 'framer-motion';
+
+import { Header, MainContainer, CreateContainer} from "./Components";
 
 
 function App() {
   return (
+    <AnimatePresence>
     <div className="w-screen h-auto flex flex-col bg-primary">
       <Header/>
 
@@ -17,6 +20,7 @@ function App() {
           </Routes>
         </main>
     </div>
+    </AnimatePresence>
   );
 }
 
