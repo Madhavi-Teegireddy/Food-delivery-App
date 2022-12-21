@@ -1,13 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 
 import { AnimatePresence } from 'framer-motion';
 
 import { Header, MainContainer, CreateContainer} from "./Components";
+import { useStateValue } from './Context/StateProvider';
+import { getAllFoodItems } from './utils/firebaseFunctions';
+import { useEffect } from 'react';
+import { actionType } from './Context/reducer';
 
 
 function App() {
+
+  const [{foodItems}, dispatch] = useStateValue();
+
+  const fetchData = async () => {
+    await getAllFoodItems().then((data) => {
+      // console.log(data)
+      dispatch({
+        type: actionType.SET_FOOD_ITEMS,
+        foodItems: data
+      })
+    })
+  }
+  
+  useEffect(() => {
+    fetchData();
+  },[])
+
   return (
     <AnimatePresence>
     <div className="w-screen h-auto flex flex-col bg-primary">
