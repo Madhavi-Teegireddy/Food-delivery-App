@@ -49,6 +49,13 @@ const Header = () => {
       })
     }
 
+    const showCart = () => {
+      dispatch({
+        type: actionType.SET_CART_SHOW,
+        cartShow: !cartShow,
+      });
+    };
+
   return (
     <header
     className='fixed z-50 w-screen
