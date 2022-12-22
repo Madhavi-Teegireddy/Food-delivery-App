@@ -40,11 +40,11 @@ const MainContainer = () => {
             </motion.div>
           </div>
         </div>
-        {/* <RowContainer
+        <RowContainer
           scrollValue={scrollValue}
           flag={true}
           data={foodItems?.filter((n) => n.category === "fruits")}
-        /> */}
+        />
       </section>
 
       {/* <MenuContainer /> */}
