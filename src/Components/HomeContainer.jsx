@@ -6,7 +6,7 @@ import { heroData } from "../utils/data";
 const HomeContainer = () => {
   return (
     <section
-      className="grid grid-cols-1 md:grid-cols-2 gap-2 w-full "
+      className="grid grid-cols-1 md:grid-cols-2 gap-2 w-full"
       id="home"
     >
       <div className="py-2 flex-1 flex flex-col items-start justify-center gap-6">
@@ -44,6 +44,7 @@ const HomeContainer = () => {
           Order Now
         </button>
       </div>
+
       <div className="py-2 flex-1 flex items-center relative">
         <img
           src={HeroBg}
@@ -51,16 +52,17 @@ const HomeContainer = () => {
           alt="hero-bg"
         />
 
-        <div className="w-full h-full absolute top-0 left-0 flex items-center justify-center lg:px-32  py-4 gap-4 flex-wrap">
+        <div className="w-full h-full absolute top-0 left-0 flex items-center justify-center px-32 py-4 gap-4 flex-wrap">
           {heroData &&
             heroData.map((n) => (
               <div
                 key={n.id}
-                className="  lg:w-190  p-4 bg-cardOverlay backdrop-blur-md rounded-3xl flex flex-col items-center justify-center drop-shadow-lg"
+                className="w-190 min-w-[190px] p-4 bg-cardOverlay backdrop-blur-md rounded-3xl flex flex-col items-center justify-center drop-shadow-lg"
               >
                 <img
                   src={n.imageSrc}
-                  className="w-20 lg:w-40 -mt-10 lg:-mt-20 "
+                  // className="w-20 lg:w-40 -mt-10 lg:-mt-20 "
+                  className="w-40 -mt-20"
                   alt="I1"
                 />
                 <p className="text-base lg:text-xl font-semibold text-textColor mt-2 lg:mt-4">
