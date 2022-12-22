@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 import RowContainer from "./RowContainer";
 import { useStateValue } from "../Context/StateProvider";
-// import MenuContainer from "./MenuContainer";
-// import CartContainer from "./CartContainer";
+import MenuContainer from "./MenuContainer";
+import CartContainer from "./CartContainer";
 
 
 
@@ -49,9 +49,9 @@ const MainContainer = () => {
         />
       </section>
 
-      {/* <MenuContainer /> */}
+      <MenuContainer />
 
-      {/* {cartShow && <CartContainer />} */}
+      {cartShow && <CartContainer />}
     </div>
   );
 };
