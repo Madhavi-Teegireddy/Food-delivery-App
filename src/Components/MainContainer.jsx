@@ -2,10 +2,12 @@ import React, { useEffect, useRef, useState } from "react";
 import HomeContainer from "./HomeContainer";
 import { motion } from "framer-motion";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
-// import RowContainer from "./RowContainer";
+import RowContainer from "./RowContainer";
 import { useStateValue } from "../Context/StateProvider";
 // import MenuContainer from "./MenuContainer";
 // import CartContainer from "./CartContainer";
+
+
 
 const MainContainer = () => {
   const [{ foodItems, cartShow }, dispatch] = useStateValue();
@@ -40,11 +42,11 @@ const MainContainer = () => {
             </motion.div>
           </div>
         </div>
-        {/* <RowContainer
+        <RowContainer
           scrollValue={scrollValue}
           flag={true}
           data={foodItems?.filter((n) => n.category === "fruits")}
-        /> */}
+        />
       </section>
 
       {/* <MenuContainer /> */}
