@@ -6,7 +6,7 @@ It is an individual project completed in 5 days. User can see all products and s
 # Tech Stacks used -
 - React:
 - Redux :
-- MUI:
+- TailwindCss :
 
 ## Dependencies:
 - react
