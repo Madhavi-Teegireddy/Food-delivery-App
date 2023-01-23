@@ -1,4 +1,4 @@
-# Food-Delivery-App 
+#🍔 Food-Delivery-App  🍉☕️
 
 🔗Live Link:https://food-app-green-tau.vercel.app/ </br></br>
 It is an individual project completed in 5 days. User can see all products and select according their need and can able to see individual item details too.
